@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1f5fae">
+  <meta name="description" content="Latihan simulasi TKA Bahasa Inggris dengan tampilan seperti ujian berbasis komputer, kunci jawaban, pembahasan, dan pembuat slide.">
+  <title>Simulasi TKA Bahasa Inggris</title>
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ============ HALAMAN AWAL ============ -->
+  <section id="view-home" class="view home" hidden>
+    <header class="cbt-head cbt-head--tall">
+      <div class="cbt-head__inner">
+        <div class="brand">
+          <img src="assets/icon.svg" alt="" width="44" height="44">
+          <div><strong>SIMULASI TKA</strong><small>LATIHAN MANDIRI</small></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="home__card">
+      <p class="home__eyebrow" id="homeJenjang"></p>
+      <h1 id="homeTitle">Simulasi TKA</h1>
+      <dl class="home__meta">
+        <div><dt>Mata pelajaran</dt><dd id="homeMapel"></dd></div>
+        <div><dt>Jumlah soal</dt><dd id="homeTotal"></dd></div>
+        <div><dt>Durasi</dt><dd id="homeDurasi"></dd></div>
+      </dl>
+
+      <div class="home__modes">
+        <button class="mode" data-mode="latihan" type="button">
+          <span class="mode__icon mode__icon--blue">✍️</span>
+          <span><strong>Kerjakan soal</strong><small>Seperti ujian asli: ada waktu, ragu-ragu, dan nilai di akhir</small></span>
+        </button>
+        <button class="mode" data-mode="kunci" type="button">
+          <span class="mode__icon mode__icon--green">✅</span>
+          <span><strong>Kunci jawaban &amp; pembahasan</strong><small>Lihat jawaban benar beserta alasannya</small></span>
+        </button>
+        <button class="mode" data-mode="slide" type="button">
+          <span class="mode__icon mode__icon--yellow">📱</span>
+          <span><strong>Buat slide TikTok</strong><small>Gambar 1080×1920 bertanda jawaban, siap diunggah</small></span>
+        </button>
+      </div>
+
+      <p class="home__resume" id="homeResume" hidden></p>
+      <p class="disclaimer">
+        Latihan tidak resmi. Soal bersumber dari
+        <a id="homeSource" href="#" target="_blank" rel="noopener">simulasi TKA Pusmendik</a>.
+        Teks bacaan berupa ringkasan.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ UJIAN / KUNCI / REVIEW ============ -->
+  <section id="view-exam" class="view exam" hidden>
+    <header class="cbt-head">
+      <div class="cbt-head__inner">
+        <a class="brand" href="#" data-go="home" title="Kembali ke awal">
+          <img src="assets/icon.svg" alt="" width="40" height="40">
+          <div><strong>SIMULASI TKA</strong><small>LATIHAN MANDIRI</small></div>
+        </a>
+        <div class="cbt-user" id="examUser">Peserta Latihan</div>
+      </div>
+    </header>
+    <main class="cbt-wrap" id="examCard"></main>
+  </section>
+
+  <!-- ============ HASIL ============ -->
+  <section id="view-result" class="view result" hidden>
+    <header class="cbt-head">
+      <div class="cbt-head__inner">
+        <a class="brand" href="#" data-go="home">
+          <img src="assets/icon.svg" alt="" width="40" height="40">
+          <div><strong>SIMULASI TKA</strong><small>LATIHAN MANDIRI</small></div>
+        </a>
+      </div>
+    </header>
+    <main class="cbt-wrap">
+      <div class="cbt-card result__card">
+        <p class="result__label">Nilai kamu</p>
+        <div class="result__score"><span id="resultScore">0</span><small>/100</small></div>
+        <p class="result__detail" id="resultDetail"></p>
+        <div class="result__legend">
+          <span><i class="dot dot--ok"></i> Benar</span>
+          <span><i class="dot dot--bad"></i> Salah / kosong</span>
+        </div>
+        <div class="num-grid" id="resultGrid"></div>
+        <p class="muted">Ketuk nomor soal untuk melihat jawabanmu, kunci, dan pembahasan.</p>
+        <div class="result__actions">
+          <button class="pill-btn pill-btn--blue" id="retryBtn" type="button">Ulangi latihan</button>
+          <button class="pill-btn pill-btn--outline" data-go="home" type="button">Halaman awal</button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- ============ SLIDE TIKTOK ============ -->
+  <section id="view-slide" class="view slides" hidden>
+    <div class="slides__bar">
+      <button class="pill-btn pill-btn--outline" data-go="home" type="button">← Kembali</button>
+      <div class="slides__nav">
+        <button class="pill-btn pill-btn--outline" id="slidePrev" type="button" aria-label="Slide sebelumnya">◀</button>
+        <span id="slideLabel">Sampul</span>
+        <button class="pill-btn pill-btn--outline" id="slideNext" type="button" aria-label="Slide berikutnya">▶</button>
+      </div>
+      <div class="slides__opts">
+        <label>Part <input id="coverPart" type="text" value="02" maxlength="6"></label>
+        <label>Akun <input id="coverHandle" type="text" placeholder="@akunmu" maxlength="30"></label>
+        <label class="check"><input id="slideShowKey" type="checkbox" checked> Tandai jawaban</label>
+      </div>
+      <div class="slides__actions">
+        <button class="pill-btn pill-btn--blue" id="slideDownload" type="button">Unduh slide ini</button>
+        <button class="pill-btn pill-btn--yellow" id="slideDownloadAll" type="button">Unduh semua (ZIP)</button>
+      </div>
+    </div>
+    <div class="slides__viewport" id="slideViewport">
+      <div class="slide-scale" id="slideScale">
+        <div class="slide" id="slide"></div>
+      </div>
+    </div>
+    <!-- area render tersembunyi untuk ekspor PNG ukuran asli -->
+    <div class="export-stage" aria-hidden="true"><div class="slide is-export" id="exportSlide"></div></div>
+  </section>
+
+  <!-- ============ MODAL ============ -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__head">
+        <h2 id="modalTitle"></h2>
+        <button class="modal__close" type="button" data-close aria-label="Tutup">×</button>
+      </div>
+      <div class="modal__body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Data dimuat dari data/<paket>.json (atau data/<paket>.js saat dibuka via file://) -->
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Simpan semua file teks dengan LF di dalam repo, supaya pemeriksaan
+# "data/*.js sinkron" di GitHub Actions (Linux) tidak gagal karena CRLF Windows.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.zip binary

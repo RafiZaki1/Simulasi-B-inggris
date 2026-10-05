@@ -1,0 +1,23 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arsip hasil ekspor slide
+*.zip
+*.png
+!assets/**/*.png
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Python (tools/build_data.py)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Log
+*.log
