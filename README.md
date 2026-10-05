@@ -3,8 +3,13 @@
 Web statis (HTML/CSS/JS, tanpa server/backend) yang mengubah file JSON soal TKA menjadi:
 
 1. **Kerjakan soal**: tampilan seperti ujian berbasis komputer (CBT). Ada sisa waktu,
-   tombol *Ragu-ragu*, *Daftar Soal*, ukuran font, dan nilai + pembahasan di akhir.
-   Progres tersimpan di browser, jadi aman kalau halaman tertutup.
+   tombol *Ragu-ragu*, *Daftar Soal*, dan ukuran font. Progres tersimpan di browser,
+   jadi aman kalau halaman tertutup.
+
+   Setelah menekan **Selesai**, nilai langsung keluar beserta peta nomor soal
+   (hijau = benar, merah = salah/kosong). Ketuk nomor mana pun untuk masuk
+   **Mode Pembahasan**: jawabanmu, kunci yang benar, dan alasannya ditampilkan
+   sekaligus dalam satu layar.
 2. **Kunci jawaban & pembahasan**: jawaban benar sudah tercentang + alasannya.
 3. **Buat slide TikTok**: slide 1080×1920 (sampul + 1 slide per soal) dengan jawaban
    tercentang, bisa diunduh satu per satu (PNG) atau semuanya sekaligus (ZIP).
@@ -19,7 +24,7 @@ data/paket-2.json     data soal (sumber utama)
 data/paket-2.js       salinan otomatis dari JSON, dipakai saat dibuka via file://
 tools/build_data.py   membuat data/*.js dari data/*.json
 assets/icon.svg       logo
-.github/workflows/    deploy otomatis ke GitHub Pages
+.github/workflows/    validasi data soal otomatis di GitHub Actions
 ```
 
 ## Menjalankan
@@ -38,15 +43,19 @@ assets/icon.svg       logo
 Tipe soal yang didukung: `single` (pilihan ganda), `multiple` (pilihan ganda kompleks),
 `category` (tabel kategori/benar-salah).
 
-## Deploy ke GitHub Pages
+## Deploy
 
-Repo ini sudah punya workflow `.github/workflows/pages.yml`. Setelah di-push:
+Situs ini statis, jadi bisa langsung di-host tanpa konfigurasi apa pun:
 
-1. Buka **Settings → Pages**, bagian *Build and deployment* pilih **GitHub Actions**.
-2. Setiap push ke `main` akan divalidasi lalu dipublikasikan otomatis.
+- **Vercel**: hubungkan repo, biarkan semua setelan default (tanpa build command,
+  output directory diisi `.`). Nama proyek harus huruf kecil, misalnya
+  `simulasi-bahasa-inggris`.
+- **GitHub Pages**: Settings - Pages - pilih *Deploy from a branch*, branch `main`, folder `/`.
+- **Lokal**: Laragon atau `python -m http.server`.
 
-Workflow juga memastikan `data/*.js` sudah sinkron dengan `data/*.json`; kalau lupa
-menjalankan `python tools/build_data.py`, build akan gagal dengan pesan yang jelas.
+Workflow `.github/workflows/ci.yml` tidak melakukan deploy. Tugasnya hanya
+memvalidasi `data/*.json` dan memastikan `data/*.js` sudah sinkron; kalau lupa
+menjalankan `python tools/build_data.py`, CI gagal dengan pesan yang jelas.
 
 ## Lisensi
 
