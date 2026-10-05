@@ -78,6 +78,39 @@ a { color: var(--blue); }
 .stim h3 { text-align: center; font-size: 1.02em; margin: 0 0 14px; }
 .stim p { margin: 0 0 10px; text-align: justify; }
 .stim__tag { display: inline-block; font-size: .72em; font-weight: 700; color: #92400e; background: #fef3c7; border-radius: 4px; padding: 1px 6px; margin-bottom: 8px; }
+.stim__tag--id { background: #dcfce7; color: #166534; margin-bottom: 8px; }
+.stim__en { line-height: 1.65; margin: 4px 0 10px; }
+.stim__en p { margin: 0 0 10px; text-align: justify; }
+.stim__trbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-size: .82em;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  margin: 6px 0 12px;
+  transition: all .15s ease;
+}
+.stim__trbtn:hover { background: #e2e8f0; border-color: #94a3b8; color: #0f172a; }
+.stim__trico { font-size: 1.1em; }
+.stim__id {
+  margin: 8px 0 14px;
+  padding: 12px 16px;
+  background: #f0fdf4;
+  border-left: 3px solid #22c55e;
+  border-radius: 0 6px 6px 0;
+  font-size: .95em;
+  line-height: 1.6;
+  color: #1e293b;
+}
+.stim__id p { margin: 0 0 10px; text-align: justify; }
+.stim__id p:last-child { margin-bottom: 0; }
+.stim__keypeek { margin-top: 14px; }
 .stim__img { display: block; margin: 0 auto 12px; border: 1px solid var(--line); border-radius: 4px; max-height: 70vh; min-height: 160px; min-width: 60%;
   background: #f3f5f8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='20'%3E%3Ctext x='0' y='15' font-family='sans-serif' font-size='13' fill='%239ca3af'%3EMemuat gambar…%3C/text%3E%3C/svg%3E") center no-repeat; }
 .stim__points { margin: 0 0 10px; padding-left: 1.4em; }

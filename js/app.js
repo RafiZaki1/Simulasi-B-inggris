@@ -133,7 +133,7 @@
     if (st.type === 'image' && st.image) {
       h += `<img class="stim__img" src="${esc(st.image)}" alt="${esc(st.title)}" referrerpolicy="no-referrer">`;
     } else if (!forSlide) {
-      h += `<span class="stim__tag">${st.text_en ? 'Teks bacaan' : 'Ringkasan teks bacaan'}</span>`;
+      h += `<span class="stim__tag">${st.text_en ? 'Teks Bacaan (English)' : 'Ringkasan teks bacaan'}</span>`;
     }
     if (st.type !== 'image') {
       if (st.text_en) {
@@ -142,9 +142,9 @@
         h += `<div class="stim__en">${paragraphsHTML(st.text_en)}</div>`;
         if (st.text_id && !forSlide) {
           h += '<button type="button" class="stim__trbtn" data-act="translate" aria-expanded="false">'
-            + 'Lihat terjemahan</button>'
+            + '<span class="stim__trico">🌐</span> <span class="stim__trtext">Lihat terjemahan (Translate)</span></button>'
             + '<div class="stim__id" hidden>'
-            + '<span class="stim__tag stim__tag--id">Terjemahan bahasa Indonesia</span>'
+            + '<span class="stim__tag stim__tag--id">Terjemahan Bahasa Indonesia</span>'
             + `${paragraphsHTML(st.text_id)}</div>`;
         }
       } else if (st.summary) {
@@ -216,11 +216,20 @@
     const fsBtns = ['s', 'm', 'l'].map((k) => `<button type="button" data-fs="${k}" class="${S.fs === k ? 'is-active' : ''}" aria-label="Ukuran font ${k}">A</button>`).join('');
     const instr = q.instruction ? `<p class="instr">${esc(q.instruction)}</p>` : '';
 
+    let keyBtn = '';
+    if (mode === 'latihan') {
+      keyBtn = '<button type="button" class="pill pill--outline" data-act="toggle-key">🔑 Kunci Jawaban</button>';
+    }
+
     let explain = '';
     if (mode === 'kunci' || review) {
       const ok = isCorrect(q, userAns);
       explain = `<div class="explain${ok ? ' is-correct' : ''}"><strong>Jawaban: ${esc(formatAnswer(q, q.answer))}</strong>`
         + (review ? `<span class="yours">Jawabanmu: ${esc(formatAnswer(q, userAns))} ${ok ? '✓' : '✗'}</span>` : '')
+        + `<div>${esc(q.pembahasan || '')}</div></div>`;
+    } else if (mode === 'latihan') {
+      explain = `<div class="explain stim__keypeek" hidden><strong>Kunci Jawaban: ${esc(formatAnswer(q, q.answer))}</strong>`
+        + (userAns ? `<span class="yours">Jawabanmu: ${esc(formatAnswer(q, userAns))}</span>` : '')
         + `<div>${esc(q.pembahasan || '')}</div></div>`;
     }
 
@@ -241,6 +250,7 @@
         <h2 class="q-no">Soal nomor <b>${q.no}</b></h2>
         <div class="q-tools">
           <button type="button" class="pill pill--blue" data-act="info">INFORMASI SOAL</button>
+          ${keyBtn}
           ${status}
           <button type="button" class="pill pill--blue" data-act="list">Daftar Soal <span class="grid-ico">${'<i></i>'.repeat(9)}</span></button>
         </div>
@@ -403,6 +413,28 @@
     else if (act === 'info') openInfo();
     else if (act === 'finish') confirmFinish();
     else if (act === 'result') go('hasil');
+    else if (act === 'translate') {
+      const btn = e.target.closest('[data-act="translate"]');
+      const box = btn?.parentElement?.querySelector('.stim__id');
+      if (box) {
+        const isHidden = box.hidden;
+        box.hidden = !isHidden;
+        btn.setAttribute('aria-expanded', String(isHidden));
+        const txt = btn.querySelector('.stim__trtext') || btn;
+        txt.textContent = isHidden ? 'Sembunyikan terjemahan' : 'Lihat terjemahan (Translate)';
+      }
+    }
+    else if (act === 'toggle-key') {
+      const btn = e.target.closest('[data-act="toggle-key"]');
+      const box = $('examCard').querySelector('.stim__keypeek');
+      if (box) {
+        const isHidden = box.hidden;
+        box.hidden = !isHidden;
+        btn.classList.toggle('pill--green', isHidden);
+        btn.classList.toggle('pill--outline', !isHidden);
+        btn.textContent = isHidden ? '🔑 Tutup Kunci' : '🔑 Kunci Jawaban';
+      }
+    }
   });
 
   document.addEventListener('keydown', (e) => {
