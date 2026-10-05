@@ -117,15 +117,40 @@
   }
 
   // ================= Render soal (dipakai ujian & slide) =================
+  /** Pecah teks jadi paragraf: baris kosong = paragraf baru, enter tunggal = <br>. */
+  function paragraphsHTML(teks) {
+    return String(teks)
+      .split(/\n\s*\n/)
+      .map((par) => par.trim())
+      .filter(Boolean)
+      .map((par) => `<p>${esc(par).replace(/\n/g, '<br>')}</p>`)
+      .join('');
+  }
+
   function stimulusHTML(st, { forSlide }) {
     if (!st) return '';
     let h = `<h3>${esc(st.title)}</h3>`;
     if (st.type === 'image' && st.image) {
       h += `<img class="stim__img" src="${esc(st.image)}" alt="${esc(st.title)}" referrerpolicy="no-referrer">`;
     } else if (!forSlide) {
-      h += '<span class="stim__tag">Ringkasan teks bacaan</span>';
+      h += `<span class="stim__tag">${st.text_en ? 'Teks bacaan' : 'Ringkasan teks bacaan'}</span>`;
     }
-    if (st.type !== 'image' && st.summary) h += `<p>${esc(st.summary)}</p>`;
+    if (st.type !== 'image') {
+      if (st.text_en) {
+        // Teks asli bahasa Inggris. Terjemahan sengaja disembunyikan di balik
+        // tombol supaya teks Inggrisnya dicoba lebih dulu.
+        h += `<div class="stim__en">${paragraphsHTML(st.text_en)}</div>`;
+        if (st.text_id && !forSlide) {
+          h += '<button type="button" class="stim__trbtn" data-act="translate" aria-expanded="false">'
+            + 'Lihat terjemahan</button>'
+            + '<div class="stim__id" hidden>'
+            + '<span class="stim__tag stim__tag--id">Terjemahan bahasa Indonesia</span>'
+            + `${paragraphsHTML(st.text_id)}</div>`;
+        }
+      } else if (st.summary) {
+        h += `<p>${esc(st.summary)}</p>`;
+      }
+    }
     if (st.points?.length) {
       // daftar poin muncul jika gambar infografis gagal dimuat
       h += `<ol class="stim__points"${st.image ? ' hidden' : ''}>${st.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ol>`;
