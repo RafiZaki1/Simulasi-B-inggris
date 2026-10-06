@@ -49,7 +49,7 @@ Tipe soal yang didukung: `single` (pilihan ganda), `multiple` (pilihan ganda kom
 ## Paket Matematika
 
 Buka beranda lalu pilih tab **Matematika** (atau `index.html?paket=matematika-gladi`).
-Soal ditranskripsi dari unggahan TikTok @timtentor, dan setiap kunci dihitung ulang. Tiga hal berbeda dari sumber:
+Soal ditranskripsi dari tangkapan layar gladi TKA, dan setiap kunci dihitung ulang. Tiga hal berbeda dari sumber:
 No. 15 (sumber 6 m → 10 m), No. 20 (sumber A, B, C, D → A, D), dan pilihan E No. 14 disusun ulang
 karena tidak ada di tangkapan layar. Soal No. 18 tidak ada di sumber, jadi nomor diurutkan ulang.
 
@@ -59,7 +59,7 @@ diganti isi field `image` dan `table`.
 ## Paket Ekonomi
 
 Pilih tab **Ekonomi** (atau `index.html?paket=ekonomi-1`). Berisi 20 soal simulasi TKA Ekonomi Paket 1
-yang ditranskripsi dari tangkapan layar TikTok @bnb_994. Jawaban yang tercentang di tangkapan layar
+yang ditranskripsi dari tangkapan layar aplikasi simulasi Pusmendik. Jawaban yang tercentang di tangkapan layar
 sudah diperiksa ulang dan cocok semua. Field `table` boleh berisi beberapa tabel, dan setiap `[tabel]`
 memakai tabel berikutnya.
 

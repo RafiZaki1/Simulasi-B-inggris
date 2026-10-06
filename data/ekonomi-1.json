@@ -8,10 +8,10 @@
     "durasi_asli": false,
     "total_soal": 20,
     "source_url": "https://pusmendik.kemendikdasmen.go.id/tka/simulasi_tka/",
-    "sumber_label": "simulasi TKA Pusmendik (tangkapan layar TikTok @bnb_994)",
+    "sumber_label": "simulasi TKA Pusmendik",
     "catatan_beranda": "Kunci jawaban sudah diperiksa ulang dan dilengkapi pembahasan.",
     "diambil_pada": "2026-10-06",
-    "catatan": "Ditranskripsi dari tangkapan layar simulasi TKA Ekonomi Paket 1 (aplikasi Pusmendik) yang dibagikan akun TikTok @bnb_994 dalam dua unggahan. Jawaban yang tercentang di tangkapan layar adalah pilihan pengunggah, bukan kunci resmi; semuanya sudah diperiksa ulang dan cocok. Durasi 75 menit adalah durasi latihan.",
+    "catatan": "Ditranskripsi dari tangkapan layar simulasi TKA Ekonomi Paket 1 (aplikasi Pusmendik). Jawaban yang tercentang di tangkapan layar bukan kunci resmi; semuanya sudah diperiksa ulang dan cocok. Durasi 75 menit adalah durasi latihan.",
     "answer_format": {
       "single": "string, contoh \"B\"",
       "multiple": "array of string, contoh [\"B\", \"C\"]",
