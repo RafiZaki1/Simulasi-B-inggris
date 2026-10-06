@@ -14,7 +14,9 @@
       "single": "string, contoh \"B\"",
       "multiple": "array of string, contoh [\"B\", \"C\"]",
       "category": "object {key pernyataan: nama kolom}"
-    }
+    },
+    "sumber_label": "simulasi TKA Pusmendik",
+    "catatan_beranda": "Teks bacaan dalam bahasa Inggris lengkap dengan tombol terjemahan."
   },
   "stimulus": [
     {

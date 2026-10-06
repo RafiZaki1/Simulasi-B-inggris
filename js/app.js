@@ -166,10 +166,25 @@
     return h;
   }
 
+  function tableHTML(t) {
+    return `<table class="data-table q-table">${t.caption ? `<caption>${esc(t.caption)}</caption>` : ''}`
+      + `<thead><tr>${t.columns.map((c) => `<th>${esc(c)}</th>`).join('')}</tr></thead>`
+      + `<tbody>${t.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+  }
+
+  /** Teks soal: paragraf dipisah baris kosong; paragraf "[gambar]" / "[tabel]" diganti gambar / tabel soal. */
+  function questionHTML(q) {
+    return String(q.question || '').split(/\n\s*\n/).map((par) => par.trim()).filter(Boolean).map((par) => {
+      if (par === '[gambar]' && q.image) return `<img class="q-img" src="${esc(q.image)}" alt="${esc(q.image_alt || '')}">`;
+      if (par === '[tabel]' && q.table) return tableHTML(q.table);
+      return `<p>${esc(par).replace(/\n/g, '<br>')}</p>`;
+    }).join('');
+  }
+
   function optionsHTML(q, selected, { review, disabled }) {
     const dis = disabled ? ' disabled' : '';
     if (q.type === 'category') {
-      const head = `<tr><th>Pernyataan</th>${q.columns.map((c) => `<th>${esc(c)}</th>`).join('')}</tr>`;
+      const head = `<tr><th>${esc(q.statement_label || 'Pernyataan')}</th>${q.columns.map((c) => `<th>${esc(c)}</th>`).join('')}</tr>`;
       const rows = q.statements.map((s) => {
         const cells = q.columns.map((col) => {
           const on = selected?.[s.key] === col;
@@ -226,11 +241,11 @@
       const ok = isCorrect(q, userAns);
       explain = `<div class="explain${ok ? ' is-correct' : ''}"><strong>Jawaban: ${esc(formatAnswer(q, q.answer))}</strong>`
         + (review ? `<span class="yours">Jawabanmu: ${esc(formatAnswer(q, userAns))} ${ok ? '✓' : '✗'}</span>` : '')
-        + `<div>${esc(q.pembahasan || '')}</div></div>`;
+        + `<div>${esc(q.pembahasan || '').replace(/\n/g, '<br>')}</div></div>`;
     } else if (mode === 'latihan') {
       explain = `<div class="explain stim__keypeek" hidden><strong>Kunci Jawaban: ${esc(formatAnswer(q, q.answer))}</strong>`
         + (userAns ? `<span class="yours">Jawabanmu: ${esc(formatAnswer(q, userAns))}</span>` : '')
-        + `<div>${esc(q.pembahasan || '')}</div></div>`;
+        + `<div>${esc(q.pembahasan || '').replace(/\n/g, '<br>')}</div></div>`;
     }
 
     let middle;
@@ -259,10 +274,10 @@
         <div class="fs">Ukuran font soal: ${fsBtns}</div>
         <div class="q-mapel">${esc(DATA.meta.mapel)}</div>
       </div>
-      <div class="q-body has-split">
-        <div class="stim">${stimulusHTML(STIM[q.stimulus_id], { forSlide: mode === 'slide' })}</div>
+      <div class="q-body${STIM[q.stimulus_id] ? ' has-split' : ' is-solo'}">
+        ${STIM[q.stimulus_id] ? `<div class="stim">${stimulusHTML(STIM[q.stimulus_id], { forSlide: mode === 'slide' })}</div>` : ''}
         <div class="question">
-          <p>${esc(q.question)}</p>${instr}
+          ${questionHTML(q)}${instr}
           ${optionsHTML(q, selected, { review, disabled: mode !== 'latihan' })}
           ${explain}
         </div>
@@ -321,6 +336,9 @@
     $('homeTotal').textContent = `${total()} soal`;
     $('homeDurasi').textContent = `${m.durasi_menit} menit`;
     $('homeSource').href = m.source_url;
+    $('homeSource').textContent = m.sumber_label || 'sumber soal';
+    $('homeNote').textContent = m.catatan_beranda || '';
+    document.querySelectorAll('[data-paket]').forEach((a) => a.classList.toggle('is-active', a.dataset.paket === PAKET));
 
     const answered = soal().filter((q) => isAnswered(q, S.answers[q.no])).length;
     const note = $('homeResume');
@@ -366,8 +384,9 @@
     card.style.setProperty('--fs', FONT_SIZES[S.fs]);
     card.className = 'cbt-wrap';
     card.innerHTML = `<div class="cbt-card">${cardHTML(q, S.mode, { timerText: timerText() })}</div>`;
-    card.dataset.stim = q.stimulus_id;
-    if (sameStim) card.querySelector('.stim').scrollTop = stimScroll;
+    card.dataset.stim = q.stimulus_id || '';
+    const stimEl = card.querySelector('.stim');
+    if (sameStim && stimEl) stimEl.scrollTop = stimScroll;
     wireImageFallback(card);
     $('examUser').textContent = S.mode === 'kunci' ? 'Mode Kunci Jawaban' : S.mode === 'review' ? 'Mode Pembahasan' : 'Peserta Latihan';
   }
@@ -590,7 +609,7 @@
         ${paket ? `<div class="cover__paket">${esc(paket.toUpperCase())}</div>` : ''}
         <div class="cover__jenjang">${esc(m.jenjang.replace('/MAK', '').toUpperCase())}</div>
       </div>
-      <div class="cover__note">Coba kerjakan dulu, baru cocokkan jawabanmu!<small>Lengkap dengan kunci jawaban · durasi asli ${m.durasi_menit} menit</small></div>
+      <div class="cover__note">Coba kerjakan dulu, baru cocokkan jawabanmu!<small>Lengkap dengan kunci jawaban · durasi ${m.durasi_asli === false ? 'latihan' : 'asli'} ${m.durasi_menit} menit</small></div>
       <div class="cover__foot"></div>
       ${handle ? `<div class="cover__handle">${esc(handle)}</div>` : ''}
     </div>`;

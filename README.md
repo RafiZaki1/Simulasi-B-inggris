@@ -20,10 +20,12 @@ Web statis (HTML/CSS/JS, tanpa server/backend) yang mengubah file JSON soal TKA 
 index.html            halaman utama
 css/style.css         tampilan
 js/app.js             logika: render soal, latihan, nilai, slide, ekspor PNG
-data/paket-2.json     data soal (sumber utama)
+data/paket-2.json     data soal Bahasa Inggris (sumber utama)
+data/matematika-gladi.json  data soal Matematika (gladi Oktober, 24 soal)
 data/paket-2.js       salinan otomatis dari JSON, dipakai saat dibuka via file://
 tools/build_data.py   membuat data/*.js dari data/*.json
 assets/icon.svg       logo
+assets/soal/          gambar soal (grafik, ilustrasi) per paket
 .github/workflows/    validasi data soal otomatis di GitHub Actions
 ```
 
@@ -42,6 +44,16 @@ assets/icon.svg       logo
 
 Tipe soal yang didukung: `single` (pilihan ganda), `multiple` (pilihan ganda kompleks),
 `category` (tabel kategori/benar-salah).
+
+## Paket Matematika
+
+Buka beranda lalu pilih tab **Matematika** (atau `index.html?paket=matematika-gladi`).
+Soal ditranskripsi dari unggahan TikTok @timtentor, dan setiap kunci dihitung ulang. Tiga hal berbeda dari sumber:
+No. 15 (sumber 6 m → 10 m), No. 20 (sumber A, B, C, D → A, D), dan pilihan E No. 14 disusun ulang
+karena tidak ada di tangkapan layar. Soal No. 18 tidak ada di sumber, jadi nomor diurutkan ulang.
+
+Soal tanpa teks bacaan tampil satu kolom. Di field `question`, paragraf `[gambar]` dan `[tabel]`
+diganti isi field `image` dan `table`.
 
 ## Deploy
 

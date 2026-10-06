@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#1f5fae">
-  <meta name="description" content="Latihan simulasi TKA Bahasa Inggris dengan tampilan seperti ujian berbasis komputer, kunci jawaban, pembahasan, dan pembuat slide.">
-  <title>Simulasi TKA Bahasa Inggris</title>
+  <meta name="description" content="Latihan simulasi TKA (Bahasa Inggris dan Matematika) dengan tampilan seperti ujian berbasis komputer, kunci jawaban, pembahasan, dan pembuat slide.">
+  <title>Simulasi TKA</title>
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +25,10 @@
     </header>
 
     <div class="home__card">
+      <nav class="paket-tabs" aria-label="Pilih mata pelajaran">
+        <a class="paket-tab" data-paket="paket-2" href="?paket=paket-2">🇬🇧 Bahasa Inggris</a>
+        <a class="paket-tab" data-paket="matematika-gladi" href="?paket=matematika-gladi">📐 Matematika</a>
+      </nav>
       <p class="home__eyebrow" id="homeJenjang"></p>
       <h1 id="homeTitle">Simulasi TKA</h1>
       <dl class="home__meta">
@@ -51,8 +55,8 @@
       <p class="home__resume" id="homeResume" hidden></p>
       <p class="disclaimer">
         Latihan tidak resmi. Soal bersumber dari
-        <a id="homeSource" href="#" target="_blank" rel="noopener">simulasi TKA Pusmendik</a>.
-        Teks bacaan dalam bahasa Inggris lengkap dengan tombol terjemahan.
+        <a id="homeSource" href="#" target="_blank" rel="noopener">sumber soal</a>.
+        <span id="homeNote"></span>
       </p>
     </div>
   </section>

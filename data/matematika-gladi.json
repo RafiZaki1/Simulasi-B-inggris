@@ -1,0 +1,891 @@
+{
+  "meta": {
+    "title": "Simulasi TKA Matematika (Gladi Oktober)",
+    "jenjang": "SMA/MA/SMK/MAK/Sederajat",
+    "jenis_mapel": "Mata Pelajaran Wajib",
+    "mapel": "Matematika (Gladi Oktober)",
+    "durasi_menit": 75,
+    "durasi_asli": false,
+    "total_soal": 24,
+    "source_url": "https://www.tiktok.com/@timtentor/photo/7693397717950663943",
+    "sumber_label": "unggahan TikTok @timtentor",
+    "catatan_beranda": "Kunci jawaban sudah dihitung ulang dan dilengkapi pembahasan.",
+    "diambil_pada": "2026-10-06",
+    "catatan": "Ditranskripsi dari tangkapan layar soal gladi TKA Matematika (Oktober) yang dibagikan akun TikTok @timtentor. Soal No. 18 tidak ada di unggahan itu, jadi nomor diurutkan ulang (no_sumber = nomor asli). Semua kunci dihitung ulang: No. 15 (sumber: 6 m) dan No. 20 (No. 21 di sumber; sumber: A, B, C, D) dikoreksi, dan pilihan E No. 14 disusun ulang karena tidak ada di tangkapan layar. Durasi 75 menit adalah durasi latihan, bukan durasi resmi.",
+    "answer_format": {
+      "single": "string, contoh \"B\"",
+      "multiple": "array of string, contoh [\"B\", \"C\"]",
+      "category": "object {key pernyataan: nama kolom}"
+    }
+  },
+  "stimulus": [],
+  "soal": [
+    {
+      "no": 1,
+      "no_sumber": 1,
+      "type": "single",
+      "indikator": "Menentukan gabungan atau irisan dari beberapa himpunan bilangan.",
+      "stimulus_id": null,
+      "question": "Diberikan tiga himpunan bilangan sebagai berikut:\nA = {x | x < 6, x ∈ Bilangan Asli}\nB = {x | x bilangan genap, x ∈ Bilangan Cacah}\nC = {x | x ≤ 10, x ∈ Bilangan Prima}\n\nBerdasarkan himpunan-himpunan tersebut, hasil dari (A ∩ B) ∪ C adalah ....",
+      "options": [
+        {
+          "key": "A",
+          "text": "{2, 3, 5, 7}"
+        },
+        {
+          "key": "B",
+          "text": "{0, 2, 3, 5, 7}"
+        },
+        {
+          "key": "C",
+          "text": "{2, 3, 4, 5, 7}"
+        },
+        {
+          "key": "D",
+          "text": "{0, 2, 3, 4, 5, 7}"
+        },
+        {
+          "key": "E",
+          "text": "{2, 3, 4, 5, 7, 10}"
+        }
+      ],
+      "answer": "C",
+      "pembahasan": "A = {1, 2, 3, 4, 5}, B = {0, 2, 4, 6, 8, ...}, C = {2, 3, 5, 7}.\nA ∩ B = anggota A yang genap = {2, 4} (0 bukan bilangan asli, jadi tidak masuk A).\n(A ∩ B) ∪ C = {2, 4} ∪ {2, 3, 5, 7} = {2, 3, 4, 5, 7}."
+    },
+    {
+      "no": 2,
+      "no_sumber": 2,
+      "type": "single",
+      "indikator": "Menyederhanakan bentuk bilangan berpangkat bulat atau pecahan dengan menggunakan sifat-sifat operasi bilangan berpangkat.",
+      "stimulus_id": null,
+      "question": "Bentuk sederhana dari\n\n[gambar]\n\nyaitu (3^(2/3) × 8^(3/2)) : (2^(5/2) × 9^(5/6)) adalah ....",
+      "image": "assets/soal/matematika-gladi/soal-02.jpg",
+      "image_alt": "Pecahan: 3 pangkat 2/3 kali 8 pangkat 3/2, dibagi 2 pangkat 5/2 kali 9 pangkat 5/6",
+      "options": [
+        {
+          "key": "A",
+          "text": "1/42"
+        },
+        {
+          "key": "B",
+          "text": "2/3"
+        },
+        {
+          "key": "C",
+          "text": "4/3"
+        },
+        {
+          "key": "D",
+          "text": "6"
+        },
+        {
+          "key": "E",
+          "text": "12"
+        }
+      ],
+      "answer": "C",
+      "pembahasan": "Ubah ke basis 2 dan 3: 8^(3/2) = (2³)^(3/2) = 2^(9/2) dan 9^(5/6) = (3²)^(5/6) = 3^(5/3).\nHasil = 3^(2/3 − 5/3) × 2^(9/2 − 5/2) = 3^(−1) × 2² = 4/3."
+    },
+    {
+      "no": 3,
+      "no_sumber": 3,
+      "type": "category",
+      "indikator": "Menerapkan sifat operasi hitung bilangan asli pada konteks permasalahan matematika yang kompleks.",
+      "stimulus_id": null,
+      "question": "Operasi biner ⊙ didefinisikan sebagai a ⊙ b = ((a − b)² + 2ab) / (a + b) untuk setiap bilangan real tidak negatif a dan b.\n\nJika a ⊙ 2 = 5, tentukan Benar atau Salah pada setiap pernyataan berikut!",
+      "columns": [
+        "Benar",
+        "Salah"
+      ],
+      "statements": [
+        {
+          "key": "1",
+          "text": "a merupakan kelipatan dari 3."
+        },
+        {
+          "key": "2",
+          "text": "a merupakan bilangan prima."
+        },
+        {
+          "key": "3",
+          "text": "a ⊙ 0 = 6."
+        }
+      ],
+      "answer": {
+        "1": "Benar",
+        "2": "Salah",
+        "3": "Benar"
+      },
+      "pembahasan": "(a − b)² + 2ab = a² + b², jadi a ⊙ b = (a² + b²) / (a + b).\na ⊙ 2 = 5 → (a² + 4) / (a + 2) = 5 → a² − 5a − 6 = 0 → (a − 6)(a + 1) = 0. Karena a tidak negatif, a = 6.\n1. 6 kelipatan 3 → Benar.\n2. 6 bukan bilangan prima → Salah.\n3. 6 ⊙ 0 = 36 / 6 = 6 → Benar."
+    },
+    {
+      "no": 4,
+      "no_sumber": 4,
+      "type": "single",
+      "indikator": "Menentukan nilai invers suatu fungsi dan penerapannya dalam permasalahan kontekstual sehari-hari.",
+      "stimulus_id": null,
+      "question": "Seorang peneliti memodelkan peningkatan suhu akibat pemanasan global yang terjadi dengan fungsi linear berikut:\ny = 0,02x − 39,9\ndengan x mewakili tahun dan y mewakili peningkatan suhu dalam derajat Celsius.\n\nPada tahun berapakah peningkatan suhu diperkirakan mencapai 0,7°C?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tahun 2000."
+        },
+        {
+          "key": "B",
+          "text": "Tahun 2003."
+        },
+        {
+          "key": "C",
+          "text": "Tahun 2025."
+        },
+        {
+          "key": "D",
+          "text": "Tahun 2030."
+        },
+        {
+          "key": "E",
+          "text": "Tahun 2345."
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Substitusi y = 0,7: 0,7 = 0,02x − 39,9 → 0,02x = 40,6 → x = 40,6 : 0,02 = 2030.\nJadi peningkatan suhu mencapai 0,7°C pada tahun 2030."
+    },
+    {
+      "no": 5,
+      "no_sumber": 5,
+      "type": "single",
+      "indikator": "Mengidentifikasi syarat komposisi dua fungsi serta penerapannya dalam permasalahan kontekstual sehari-hari.",
+      "stimulus_id": null,
+      "question": "Tempat Les Pintarku memberikan potongan biaya kursus kepada 50 pendaftar pertama, sedangkan harga normal berlaku untuk pendaftar lainnya. Biaya kursus setelah mendapatkan potongan harga dapat dihitung dengan fungsi berikut:\ny = 0,9x\ndengan x adalah biaya kursus mula-mula dan y adalah biaya setelah potongan harga.\n\nSelain itu, bagi siswa yang berprestasi akan mendapat tambahan potongan harga yang besarnya disesuaikan dengan nilai rapor mereka. Setelah mendapatkan tambahan potongan harga maka biaya akhir kursus menjadi sebagai berikut:\ng(y) = 0,7y, jika nilai rapor di atas 90\ng(y) = 0,8y, jika nilai rapor 85–90\ndengan g(y) adalah biaya akhir setelah tambahan diskon.\n\nSalah satu siswa bernama Fira, merupakan pendaftar ke-50 dan membayar biaya kursus sebesar Rp180.000,00. Setelah itu, datang empat siswa lainnya yang juga ingin mengikuti kursus dengan informasi berikut:\n\n[tabel]\n\nDengan uang yang dimiliki, siapakah siswa yang pasti dapat mengikuti kursus?",
+      "table": {
+        "columns": [
+          "Nama",
+          "Nilai Rapor",
+          "Uang yang dimiliki (Rp)"
+        ],
+        "rows": [
+          [
+            "Andi",
+            "90",
+            "285.000"
+          ],
+          [
+            "Budi",
+            "92",
+            "286.000"
+          ],
+          [
+            "Cici",
+            "89",
+            "280.000"
+          ],
+          [
+            "Dini",
+            "95",
+            "287.000"
+          ]
+        ]
+      },
+      "options": [
+        {
+          "key": "A",
+          "text": "Dini."
+        },
+        {
+          "key": "B",
+          "text": "Dini dan Budi."
+        },
+        {
+          "key": "C",
+          "text": "Dini, Budi dan Andi."
+        },
+        {
+          "key": "D",
+          "text": "Dini, Cici, Budi dan Andi."
+        },
+        {
+          "key": "E",
+          "text": "Cici dan Andi."
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Fira pendaftar ke-50, jadi masih dapat potongan: 0,9x = 180.000 → x = 200.000 (biaya normal).\nKeempat siswa datang setelah Fira, jadi tanpa potongan 10%: y = 200.000, lalu dapat potongan rapor:\n• Andi (90) dan Cici (89): 0,8 × 200.000 = 160.000\n• Budi (92) dan Dini (95): 0,7 × 200.000 = 140.000\nUang mereka (Rp280.000–Rp287.000) lebih dari cukup, jadi Dini, Cici, Budi, dan Andi pasti bisa ikut.\n(Bahkan bila Rp180.000 milik Fira sudah termasuk potongan rapor, biaya akhir keempatnya tetap di bawah uang mereka — itulah arti \"pasti\".)"
+    },
+    {
+      "no": 6,
+      "no_sumber": 6,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari yang berkaitan dengan barisan dan deret bilangan aritmatika.",
+      "stimulus_id": null,
+      "question": "Pada saat pertandingan sepak bola Indonesia melawan Jepang, kelompok pendukung tim Indonesia akan duduk membentuk koreo dengan beberapa orang memegang kertas berwarna yang dibentangkan. Total kertas berwarna yang dipegang oleh pendukung di barisan kursi paling bawah adalah sebanyak 400 lembar, kemudian di baris kedua sebanyak 550 lembar, dan semakin bertambah pada barisan kursi berikutnya dengan pola penambahan yang sama.\n\nJika pola penambahan tersebut berlaku sampai pada baris kursi ketujuh, maka berapa banyak penonton yang memegang kertas koreo di baris ke-5?",
+      "options": [
+        {
+          "key": "A",
+          "text": "700 orang."
+        },
+        {
+          "key": "B",
+          "text": "850 orang."
+        },
+        {
+          "key": "C",
+          "text": "1.000 orang."
+        },
+        {
+          "key": "D",
+          "text": "1.150 orang."
+        },
+        {
+          "key": "E",
+          "text": "1.300 orang."
+        }
+      ],
+      "answer": "C",
+      "pembahasan": "Barisan aritmetika: a = 400, beda b = 550 − 400 = 150 (satu orang memegang satu lembar).\nU₅ = a + 4b = 400 + 4 × 150 = 1.000 orang."
+    },
+    {
+      "no": 7,
+      "no_sumber": 7,
+      "type": "multiple",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari yang berkaitan dengan konsep barisan dan deret bilangan geometri.",
+      "stimulus_id": null,
+      "question": "Seorang pasien dengan kadar asam urat tinggi menjalani terapi menggunakan obat penurun kadar asam urat. Pada hari pertama, kadar asam urat dalam darah tercatat 13 mg/dL. Obat bekerja menurunkan kadar asam urat sebesar 20% setiap hari secara konsisten. Beberapa hal yang perlu diperhatikan dalam mengonsumsi obat penurun asam urat:\n- Pasien mulai merasa lebih nyaman saat kadar asam urat ada di bawah 7 mg/dL.\n- Pasien dianggap sembuh secara klinis jika kadar asam urat telah mencapai kurang dari 5 mg/dL.\n\nPada hari keberapa pasien merasa nyaman namun belum dianggap sembuh secara klinis?",
+      "instruction": "Klik pada setiap jawaban benar! Jawaban benar lebih dari satu.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hari ke-2"
+        },
+        {
+          "key": "B",
+          "text": "Hari ke-3"
+        },
+        {
+          "key": "C",
+          "text": "Hari ke-4"
+        },
+        {
+          "key": "D",
+          "text": "Hari ke-5"
+        },
+        {
+          "key": "E",
+          "text": "Hari ke-6"
+        }
+      ],
+      "answer": [
+        "C",
+        "D"
+      ],
+      "pembahasan": "Turun 20% per hari = dikali 0,8 setiap hari: Uₙ = 13 × 0,8ⁿ⁻¹.\nHari ke-1: 13 | ke-2: 10,4 | ke-3: 8,32 | ke-4: 6,656 | ke-5: 5,3248 | ke-6: 4,26\nDi bawah 7 (nyaman) mulai hari ke-4; di bawah 5 (sembuh) mulai hari ke-6.\nJadi nyaman tetapi belum sembuh: hari ke-4 dan hari ke-5."
+    },
+    {
+      "no": 8,
+      "no_sumber": 8,
+      "type": "single",
+      "indikator": "Memodelkan grafik suatu daerah penyelesaian ke dalam bentuk sistem pertidaksamaan linear dua variabel.",
+      "stimulus_id": null,
+      "question": "[gambar]\n\nDaerah yang diarsir pada gambar tersebut merupakan himpunan penyelesaian dari sistem pertidaksamaan ....",
+      "image": "assets/soal/matematika-gladi/soal-08.jpg",
+      "image_alt": "Grafik: garis f melalui A(−4, 0) dan B(0, 2), garis g melalui B(0, 2) dan C(2, 0); segitiga ABC diarsir.",
+      "options": [
+        {
+          "key": "A",
+          "text": "x − 2y ≥ −4\nx + y ≤ 2\nx ≥ 0\ny ≥ 0"
+        },
+        {
+          "key": "B",
+          "text": "x − 2y ≥ −4\nx + y ≤ 2\ny ≥ 0"
+        },
+        {
+          "key": "C",
+          "text": "x − 2y ≥ −4\nx + y ≥ 2\ny ≥ 0"
+        },
+        {
+          "key": "D",
+          "text": "2x − y ≤ 4\nx + y ≤ 2\ny ≥ 0"
+        },
+        {
+          "key": "E",
+          "text": "2x − y ≥ 4\nx + y ≤ 2\nx ≥ 0\ny ≥ 0"
+        }
+      ],
+      "answer": "B",
+      "pembahasan": "Garis f melalui A(−4, 0) dan B(0, 2): x − 2y = −4. Garis g melalui B(0, 2) dan C(2, 0): x + y = 2. Batas bawah: sumbu-X (y = 0).\nUji titik (0, 1) di dalam arsiran: 0 − 2 = −2 ≥ −4 ✓, 0 + 1 = 1 ≤ 2 ✓, y = 1 ≥ 0 ✓.\nJadi sistemnya x − 2y ≥ −4, x + y ≤ 2, y ≥ 0.\nPilihan A salah karena syarat x ≥ 0 membuang bagian segitiga di kiri sumbu-Y."
+    },
+    {
+      "no": 9,
+      "no_sumber": 9,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual yang dapat dimodelkan ke dalam sistem persamaan linear tiga variabel.",
+      "stimulus_id": null,
+      "question": "Bu Silma adalah seorang perangkai bunga yang disusun dalam buket bunga. Di tokonya, ia memiliki bunga mawar, lili, dan anyelir. Harga buket ditentukan dari total harga bunga yang digunakan dalam buket tersebut. Adapun tiga jenis buket yang biasa ia siapkan dengan komposisi ketiga bunga beserta harga per buketnya diberikan pada gambar berikut.\n\n[gambar]\n\nBila seorang pembeli ingin membeli buket bunga tipe C namun ingin menambah 2 tangkai lili dan 1 tangkai anyelir dengan harga satuan, maka total harga yang harus dibayar pembeli tersebut adalah ....",
+      "image": "assets/soal/matematika-gladi/soal-09.jpg",
+      "image_alt": "Buket tipe A (2 mawar, 3 lili, 1 anyelir) Rp85.000; tipe B (1 mawar, 2 lili, 2 anyelir) Rp70.000; tipe C (3 mawar, 1 lili, 1 anyelir) Rp75.000.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rp75.000,00"
+        },
+        {
+          "key": "B",
+          "text": "Rp102.000,00"
+        },
+        {
+          "key": "C",
+          "text": "Rp110.000,00"
+        },
+        {
+          "key": "D",
+          "text": "Rp115.000,00"
+        },
+        {
+          "key": "E",
+          "text": "Rp116.000,00"
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Dari gambar (m = mawar, l = lili, n = anyelir, dalam ribuan):\nA: 2m + 3l + n = 85\nB: m + 2l + 2n = 70\nC: 3m + l + n = 75\nA − C: −m + 2l = 10 → m = 2l − 10. Masuk ke B: 4l + 2n = 80 → n = 40 − 2l.\nMasuk ke C: 3(2l − 10) + l + 40 − 2l = 75 → 5l = 65 → l = 13, m = 16, n = 14.\nTotal = 75 + 2 × 13 + 14 = 115 → Rp115.000,00."
+    },
+    {
+      "no": 10,
+      "no_sumber": 10,
+      "type": "multiple",
+      "indikator": "Mengidentifikasi hubungan antar dua garis atau antar dua sudut.",
+      "stimulus_id": null,
+      "question": "Perhatikan gambar berikut!\n\n[gambar]\n\nBerdasarkan gambar tersebut, pasangan sudut manakah yang membentuk sudut 180°?",
+      "image": "assets/soal/matematika-gladi/soal-10.jpg",
+      "image_alt": "Segitiga siku-siku dengan dua garis mendatar sejajar; sudut A di puncak, sudut F, E, B, D di perpotongan garis tengah dengan sisi miring, sudut C di pojok kanan bawah.",
+      "instruction": "Klik pada setiap jawaban benar! Jawaban benar lebih dari satu.",
+      "options": [
+        {
+          "key": "A",
+          "text": "∠A dan ∠B"
+        },
+        {
+          "key": "B",
+          "text": "∠A dan ∠E"
+        },
+        {
+          "key": "C",
+          "text": "∠B dan ∠C"
+        },
+        {
+          "key": "D",
+          "text": "∠B dan ∠D"
+        },
+        {
+          "key": "E",
+          "text": "∠E dan ∠C"
+        }
+      ],
+      "answer": [
+        "C",
+        "D",
+        "E"
+      ],
+      "pembahasan": "Misalkan sudut lancip antara sisi miring dan garis mendatar = θ (= ∠C).\n∠F = ∠D = θ (bertolak belakang), ∠E = ∠B = 180° − θ (bertolak belakang).\n• ∠B + ∠D = 180° (berpelurus).\n• ∠B + ∠C = 180° (sudut dalam sepihak pada garis sejajar).\n• ∠E + ∠C = 180° (karena ∠E = ∠B).\n∠A = 90° − θ, jadi ∠A + ∠B = ∠A + ∠E = 270° − 2θ, tidak selalu 180°."
+    },
+    {
+      "no": 11,
+      "no_sumber": 11,
+      "type": "multiple",
+      "indikator": "Menentukan hubungan antar bidang atau antar garis pada suatu bangun ruang.",
+      "stimulus_id": null,
+      "question": "Zara ingin menata kembali kamarnya dengan menambahkan papan jadwal di dinding. Papan jadwal tidak diletakkan pada dinding yang sejajar dengan rak buku gantung. Posisi rak buku gantung dapat dilihat pada gambar berikut.\n\n[gambar]\n\nBerdasarkan posisi yang diinginkan, pada dinding manakah papan jadwal akan diletakkan?",
+      "image": "assets/soal/matematika-gladi/soal-11.jpg",
+      "image_alt": "Kamar berbentuk balok ABCD.EFGH; rak buku gantung menempel pada dinding CDHG (di samping lemari).",
+      "instruction": "Klik pada setiap jawaban benar! Jawaban benar lebih dari satu.",
+      "options": [
+        {
+          "key": "A",
+          "text": "CDHG"
+        },
+        {
+          "key": "B",
+          "text": "BCGF"
+        },
+        {
+          "key": "C",
+          "text": "ABFE"
+        },
+        {
+          "key": "D",
+          "text": "BCFA"
+        },
+        {
+          "key": "E",
+          "text": "ADHE"
+        }
+      ],
+      "answer": [
+        "B",
+        "E"
+      ],
+      "pembahasan": "Kamar = balok ABCD.EFGH dengan dinding ABFE, BCGF, CDHG, dan ADHE.\nRak buku gantung menempel pada dinding CDHG, jadi rak sejajar dengan CDHG dan dinding di hadapannya, ABFE.\nPapan jadwal diletakkan di dinding yang tidak sejajar (tegak lurus): BCGF dan ADHE.\nBCFA bukan dinding, melainkan bidang diagonal."
+    },
+    {
+      "no": 12,
+      "no_sumber": 12,
+      "type": "single",
+      "indikator": "Menentukan panjang sisi yang tidak diketahui pada suatu bangun datar dengan menerapkan konsep kesebangunan.",
+      "stimulus_id": null,
+      "question": "Perhatikan gambar berikut!\n\n[gambar]\n\nDiketahui trapesium KLMN dan NMPO sebangun.\nBerdasarkan informasi tersebut, berapakah panjang sisi LM?",
+      "image": "assets/soal/matematika-gladi/soal-12.jpg",
+      "image_alt": "Trapesium siku-siku: OP = 18 cm, KL = 32 cm, KN = 16 cm, garis NM sejajar KL.",
+      "options": [
+        {
+          "key": "A",
+          "text": "6√5 cm"
+        },
+        {
+          "key": "B",
+          "text": "8√5 cm"
+        },
+        {
+          "key": "C",
+          "text": "9√5 cm"
+        },
+        {
+          "key": "D",
+          "text": "10√5 cm"
+        },
+        {
+          "key": "E",
+          "text": "14√5 cm"
+        }
+      ],
+      "answer": "B",
+      "pembahasan": "NMPO sebangun KLMN: OP/NM = NM/KL → NM² = 18 × 32 = 576 → NM = 24 cm.\nPada trapesium KLMN: tinggi KN = 16 cm, selisih alas KL − NM = 32 − 24 = 8 cm.\nLM = √(8² + 16²) = √320 = 8√5 cm."
+    },
+    {
+      "no": 13,
+      "no_sumber": 13,
+      "type": "category",
+      "indikator": "Menerapkan teorema Pythagoras dalam menyelesaikan permasalahan kontekstual sehari-hari.",
+      "stimulus_id": null,
+      "question": "Tim adiwiyata SMA Gemilang sedang menata sayuran di kebun sekolah. Mereka menanam beberapa tanaman obat keluarga (toga) seperti jahe, kunyit dan lengkuas. Setiap tanaman ditempatkan di pot yang berbeda-beda ukurannya. Pot tersebut akan diletakkan di salah satu sisi kebun seperti pada ilustrasi berikut.\n\n[gambar]\n\nUkuran diameter pot yang digunakan untuk jahe berukuran 15 cm, kunyit berukuran 26 cm dan lengkuas berukuran 30 cm.\n\nBerdasarkan ilustrasi, tentukan benar atau salah pernyataan berkaitan dengan ukuran sisi kebun yang ditanami tanaman toga tersebut!",
+      "image": "assets/soal/matematika-gladi/soal-13.jpg",
+      "image_alt": "Kebun: sisi kiri 500 cm, sisi kanan 350 cm, sisi bawah 360 cm; pot berjajar di sisi miring atas.",
+      "statement_label": "Banyak Tanaman",
+      "columns": [
+        "Benar",
+        "Salah"
+      ],
+      "statements": [
+        {
+          "key": "1",
+          "text": "Ada 25 tanaman jahe yang bisa ditanam."
+        },
+        {
+          "key": "2",
+          "text": "Ada 15 tanaman kunyit yang bisa ditanam."
+        },
+        {
+          "key": "3",
+          "text": "Ada 10 tanaman lengkuas yang bisa ditanam."
+        }
+      ],
+      "answer": {
+        "1": "Salah",
+        "2": "Benar",
+        "3": "Salah"
+      },
+      "pembahasan": "Pot diletakkan di sisi miring. Selisih tinggi 500 − 350 = 150 cm, lebar 360 cm:\nsisi miring = √(360² + 150²) = √152.100 = 390 cm.\n• Jahe: 390 : 15 = 26 pot → \"25\" Salah.\n• Kunyit: 390 : 26 = 15 pot → Benar.\n• Lengkuas: 390 : 30 = 13 pot → \"10\" Salah."
+    },
+    {
+      "no": 14,
+      "no_sumber": 14,
+      "type": "single",
+      "indikator": "Menentukan bayangan atau titik asal dari suatu titik ketika diterapkan komposisi dua transformasi geometri.",
+      "stimulus_id": null,
+      "question": "Perhatikan gambar berikut.\n\n[gambar]\n\nTitik B direfleksikan oleh garis y = 1, kemudian dirotasi dengan pusat di O(0, 0) sebesar 180° searah jarum jam. Titik B' pada gambar merupakan bayangan titik B hasil komposisi kedua transformasi tersebut. Letak titik B yang sesuai adalah ....",
+      "image": "assets/soal/matematika-gladi/soal-14.jpg",
+      "image_alt": "Bidang koordinat dengan titik B'(−4, 1).",
+      "options": [
+        {
+          "key": "A",
+          "text": "B(4, −1)"
+        },
+        {
+          "key": "B",
+          "text": "B(−6, −1)"
+        },
+        {
+          "key": "C",
+          "text": "B(−2, −1)"
+        },
+        {
+          "key": "D",
+          "text": "B(2, 4)"
+        },
+        {
+          "key": "E",
+          "text": "B(4, 3)"
+        }
+      ],
+      "answer": "E",
+      "pembahasan": "Kerjakan mundur dari B'(−4, 1).\nRotasi 180°: (x, y) → (−x, −y), jadi sebelum dirotasi titiknya (4, −1).\nRefleksi terhadap y = 1: (x, y) → (x, 2 − y), jadi B = (4, 2 − (−1)) = (4, 3).\nCek: B(4, 3) → refleksi y = 1 → (4, −1) → rotasi 180° → (−4, 1) = B' ✓\nPilihan A (4, −1) adalah titik antara setelah refleksi, bukan titik B.\nCatatan: di sumber, pilihan berupa gambar dan hanya empat yang terlihat (tanpa kunci); pilihan E disusun dari hasil hitungan ini."
+    },
+    {
+      "no": 15,
+      "no_sumber": 15,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari yang melibatkan jarak dua titik dalam suatu bangun ruang.",
+      "stimulus_id": null,
+      "question": "SD Jaya Makmur baru saja mendapat ruangan kelas baru. Murid-murid ingin menghias kelasnya dengan memasang tali hiasan pada bagian langit-langit kelas. Tali hiasan dipasang dari pojok dinding pintu masuk ke bagian tengah langit-langit dinding papan tulis seperti pada gambar berikut.\n\n[gambar]\n\nMereka akan membuat tali kedua yang sama seperti tali hiasan pertama untuk dipasang ke pojok yang lain pada dinding pintu.\n\nApabila mereka membeli gulungan tali yang panjangnya 20 meter, berapakah sisa tali yang tidak terpakai?",
+      "image": "assets/soal/matematika-gladi/soal-15.jpg",
+      "image_alt": "Ruang kelas: tinggi 5 m, lebar 4 m, panjang dinding pintu 6 m; tali dari pojok atas dinding pintu ke tengah tepi langit-langit dinding papan tulis.",
+      "options": [
+        {
+          "key": "A",
+          "text": "6 m."
+        },
+        {
+          "key": "B",
+          "text": "10 m."
+        },
+        {
+          "key": "C",
+          "text": "11 m."
+        },
+        {
+          "key": "D",
+          "text": "13 m."
+        },
+        {
+          "key": "E",
+          "text": "15 m."
+        }
+      ],
+      "answer": "B",
+      "pembahasan": "Kedua ujung tali ada di langit-langit, jadi tinggi 5 m tidak dipakai.\nTali menyeberangi lebar 4 m dan bergeser setengah panjang ruangan 6 : 2 = 3 m:\npanjang satu tali = √(4² + 3²) = 5 m.\nDua tali = 10 m, sisa = 20 − 10 = 10 m.\nCatatan: kunci di sumber menandai 6 m. Angka itu baru muncul bila tinggi ikut dihitung (√(4² + 3² + 5²) ≈ 7,07 m per tali), padahal tali tidak turun ke lantai."
+    },
+    {
+      "no": 16,
+      "no_sumber": 16,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari yang melibatkan perhitungan keliling gabungan bangun datar.",
+      "stimulus_id": null,
+      "question": "Arif, seorang desain interior akan membuat suatu desain ornamen jam dinding baru. Ornamen tersebut memiliki bentuk dasar gabungan segitiga dan lingkaran. Adapun bentuk ornamen jam dan ukuran yang akan dibuat diberikan pada gambar berikut.\n\n[gambar]\n\nDi sekeliling ornamen jam tersebut akan ditempel kayu tipis untuk menambah efek tiga dimensi.\nApabila Arif akan membuat dua buah ornamen jam dinding untuk dijadikan model contoh, berapa panjang kayu tipis yang ia perlukan?",
+      "image": "assets/soal/matematika-gladi/soal-16.jpg",
+      "image_alt": "Ornamen jam: segitiga dengan alas 50 cm dan lingkaran berdiameter 20 cm berpusat di tengah alas; tinggi total 70 cm.",
+      "options": [
+        {
+          "key": "A",
+          "text": "322,8 cm."
+        },
+        {
+          "key": "B",
+          "text": "352,8 cm."
+        },
+        {
+          "key": "C",
+          "text": "362,8 cm."
+        },
+        {
+          "key": "D",
+          "text": "382,8 cm."
+        },
+        {
+          "key": "E",
+          "text": "445,6 cm."
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Pusat lingkaran di alas segitiga: tinggi segitiga = 70 − 10 = 60 cm.\nSisi miring = √(25² + 60²) = √4.225 = 65 cm → dua sisi = 130 cm.\nAlas di luar lingkaran = 50 − 20 = 30 cm.\nSetengah keliling lingkaran = ½ × 3,14 × 20 = 31,4 cm.\nSatu ornamen = 130 + 30 + 31,4 = 191,4 cm; dua ornamen = 382,8 cm."
+    },
+    {
+      "no": 17,
+      "no_sumber": 17,
+      "type": "single",
+      "indikator": "Menggunakan keterkaitan antara konsep keliling dan luas bangun datar dalam menyelesaikan permasalahan.",
+      "stimulus_id": null,
+      "question": "Perhatikan permasalahan berikut!\n\nPanjang salah satu diagonal suatu layang-layang adalah 20 cm.\n\n[gambar]\n\nBerapakah keliling layang-layang tersebut?\n\nPutuskan apakah pernyataan (1) dan pernyataan (2) berikut cukup untuk menjawab permasalahan tersebut!\n(1) Luas layang-layang adalah 160 cm².\n(2) Panjang salah satu sisi layang-layang adalah 10 cm.",
+      "image": "assets/soal/matematika-gladi/soal-17.jpg",
+      "image_alt": "Layang-layang dengan kedua diagonalnya.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pernyataan (1) SAJA cukup untuk menjawab pertanyaan, tetapi pernyataan (2) SAJA tidak cukup."
+        },
+        {
+          "key": "B",
+          "text": "Pernyataan (2) SAJA cukup untuk menjawab pertanyaan, tetapi pernyataan (1) SAJA tidak cukup."
+        },
+        {
+          "key": "C",
+          "text": "DUA pernyataan BERSAMA-SAMA cukup untuk menjawab pertanyaan, tetapi SATU pernyataan SAJA tidak cukup."
+        },
+        {
+          "key": "D",
+          "text": "Pernyataan (1) SAJA cukup untuk menjawab pertanyaan dan pernyataan (2) SAJA cukup."
+        },
+        {
+          "key": "E",
+          "text": "Pernyataan (1) dan pernyataan (2) tidak cukup untuk menjawab pertanyaan."
+        }
+      ],
+      "answer": "C",
+      "pembahasan": "(1) saja: ½ × 20 × d₂ = 160 → d₂ = 16 cm, tetapi letak titik potong diagonal belum diketahui → keliling belum pasti.\n(2) saja: hanya satu sisi diketahui → tidak cukup.\nBersama-sama: diagonal 16 cm terbagi 8 + 8, diagonal 20 cm terbagi p + (20 − p).\n8² + p² = 10² → p = 6, sisi lain = √(8² + 14²) = √260 = 2√65 cm.\nKeliling = 2(10 + 2√65) = 20 + 4√65 cm → dapat ditentukan. Jawaban C."
+    },
+    {
+      "no": 18,
+      "no_sumber": 19,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari yang melibatkan luas permukaan bangun ruang sisi lengkung.",
+      "stimulus_id": null,
+      "question": "Bu Sita, seorang desainer interior, sedang mengerjakan proyek pribadi untuk mempercantik kamar tidurnya. Ia berencana membuat beberapa hiasan lampu tidur dari bahan akrilik. Setiap hiasan akan berbentuk tabung berongga (tanpa alas dan tutup) dengan diameter 14 cm dan tinggi 25 cm. Bagian luar hiasan tabung ini akan dilapisi dengan stiker vinil motif bunga seperti pada gambar berikut.\n\n[gambar]\n\nStiker vinil dijual dalam lembaran, dan harga satu lembarnya adalah Rp9.000,00. Setiap lembar stiker vinil mampu menutupi area seluas 300 cm². Jika Bu Sita berencana membuat 8 buah hiasan lampu tidur, berapakah biaya minimal yang harus dikeluarkan Bu Sita untuk membeli stiker vinil tersebut?",
+      "image": "assets/soal/matematika-gladi/soal-18.jpg",
+      "image_alt": "Foto lampu tidur berbentuk tabung bermotif bunga.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rp72.000,00."
+        },
+        {
+          "key": "B",
+          "text": "Rp108.000,00."
+        },
+        {
+          "key": "C",
+          "text": "Rp252.000,00."
+        },
+        {
+          "key": "D",
+          "text": "Rp270.000,00."
+        },
+        {
+          "key": "E",
+          "text": "Rp288.000,00."
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Yang dilapisi hanya selimut tabung: L = π × d × t = 22/7 × 14 × 25 = 1.100 cm².\n8 hiasan = 8.800 cm² → 8.800 : 300 = 29,33 → dibulatkan ke atas 30 lembar.\nBiaya minimal = 30 × Rp9.000 = Rp270.000,00.\n(Jika dihitung per lampu: 4 lembar × 8 = 32 lembar = Rp288.000 — bukan biaya minimal.)"
+    },
+    {
+      "no": 19,
+      "no_sumber": 20,
+      "type": "category",
+      "indikator": "Menentukan suatu nilai perbandingan trigonometri apabila diketahui nilai perbandingan trigonometri lainnya.",
+      "stimulus_id": null,
+      "question": "[gambar]\n\nJika diketahui nilai cos α = 3/5, tentukan Benar atau Salah terkait perbandingan trigonometri berikut!",
+      "image": "assets/soal/matematika-gladi/soal-19.jpg",
+      "image_alt": "Segitiga ABC dengan garis tinggi AD; AB = 4 cm dan AB = DC; sudut α di A (antara AD dan AC), sudut β di B.",
+      "columns": [
+        "Benar",
+        "Salah"
+      ],
+      "statements": [
+        {
+          "key": "1",
+          "text": "sin β = √7/4"
+        },
+        {
+          "key": "2",
+          "text": "cos β = √7/5"
+        },
+        {
+          "key": "3",
+          "text": "tan β = 3√7/7"
+        }
+      ],
+      "answer": {
+        "1": "Salah",
+        "2": "Salah",
+        "3": "Benar"
+      },
+      "pembahasan": "Tanda pada gambar: DC = AB = 4 cm.\nSegitiga ADC siku-siku di D: cos α = AD/AC = 3/5, sin α = DC/AC = 4/5 → AC = 5, AD = 3.\nSegitiga ABD: AB = 4, AD = 3 → BD = √(16 − 9) = √7.\nsin β = 3/4 → Salah. cos β = √7/4 → Salah. tan β = 3/√7 = 3√7/7 → Benar."
+    },
+    {
+      "no": 20,
+      "no_sumber": 21,
+      "type": "multiple",
+      "indikator": "Menginterpretasi penyajian data dalam bentuk diagram garis.",
+      "stimulus_id": null,
+      "question": "Banyak siswa yang lulus di sekolah Yayasan Cahaya beragam setiap tahunnya. Berikut adalah data banyak lulusan di tiga sekolah menengah swasta milik Yayasan Cahaya.\n\n[gambar]\n\nBerdasarkan grafik tersebut, berikut ini pernyataan mana saja yang tepat mendeskripsikan banyak lulusan di ketiga sekolah milik Yayasan Cahaya?",
+      "image": "assets/soal/matematika-gladi/soal-20.jpg",
+      "image_alt": "Diagram garis lulusan 2017–2025. SMA 1 Bintang: 300, 310, 310, 300, 308, 310, 315, 350, 360. SMA 2 Bintang: 255, 260, 290, 310, 315, 320, 300, 300, 300. SMK Kejora: 250, 285, 300, 320, 320, 325, 320, 350, 400.",
+      "instruction": "Pilih setiap jawaban benar! Jawaban benar lebih dari satu.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Banyak siswa SMA 1 Bintang yang lulus selalu bertambah mulai tahun 2020."
+        },
+        {
+          "key": "B",
+          "text": "Pada tahun 2017-2020, banyak lulusan dari ketiga sekolah di yayasan Cahaya selalu bertambah."
+        },
+        {
+          "key": "C",
+          "text": "Banyak lulusan SMK Kejora konsisten naik selama lima tahun terakhir."
+        },
+        {
+          "key": "D",
+          "text": "Banyak lulusan SMA 2 Bintang tetap sama selama tiga tahun terakhir."
+        },
+        {
+          "key": "E",
+          "text": "Banyak lulusan ketiga sekolah di tahun 2023 menurun dibanding tahun sebelumnya."
+        }
+      ],
+      "answer": [
+        "A",
+        "D"
+      ],
+      "pembahasan": "Data dari grafik (2017–2025):\nSMA 1 Bintang: 300, 310, 310, 300, 308, 310, 315, 350, 360\nSMA 2 Bintang: 255, 260, 290, 310, 315, 320, 300, 300, 300\nSMK Kejora: 250, 285, 300, 320, 320, 325, 320, 350, 400\nA. SMA 1 sejak 2020: 300 → 308 → 310 → 315 → 350 → 360, selalu naik → benar.\nB. SMA 1 pada 2018–2020: 310 → 310 → 300, tidak selalu bertambah → salah.\nC. Kejora turun 325 → 320 pada 2023 → tidak konsisten naik → salah.\nD. SMA 2 tiga tahun terakhir: 300, 300, 300 → benar.\nE. SMA 1 justru naik 310 → 315 pada 2023 → salah.\nCatatan: kunci di sumber menandai A, B, C, D. Menurut grafik, C jelas salah dan B salah bila dibaca per sekolah."
+    },
+    {
+      "no": 21,
+      "no_sumber": 22,
+      "type": "single",
+      "indikator": "Menyelesaikan permasalahan kontekstual sehari-hari dengan menerapkan aturan pencacahan.",
+      "stimulus_id": null,
+      "question": "Di sebuah acara bazar yang diadakan oleh suatu sekolah, terdapat 5 stan yang masing-masing dikelola oleh pedagang yang berbeda.\n\n[gambar]\n\nDalam bazar tersebut, stan pedagang C ingin berada di antara pedagang A dan pedagang D. Banyak kemungkinan susunan atau penataan stan sesuai keinginan pedagang C tersebut adalah ....",
+      "image": "assets/soal/matematika-gladi/soal-21.jpg",
+      "image_alt": "Lima stan berjajar di bawah spanduk BAZAR SEKOLAH.",
+      "options": [
+        {
+          "key": "A",
+          "text": "6 susunan"
+        },
+        {
+          "key": "B",
+          "text": "12 susunan"
+        },
+        {
+          "key": "C",
+          "text": "120 susunan"
+        },
+        {
+          "key": "D",
+          "text": "240 susunan"
+        },
+        {
+          "key": "E",
+          "text": "720 susunan"
+        }
+      ],
+      "answer": "B",
+      "pembahasan": "C di antara A dan D → satu blok A–C–D atau D–C–A (2 cara).\nBlok + B + E = 3 unit → 3! = 6 cara.\nTotal = 6 × 2 = 12 susunan."
+    },
+    {
+      "no": 22,
+      "no_sumber": 23,
+      "type": "category",
+      "indikator": "Menggunakan informasi ukuran pemusatan atau sebaran data untuk melengkapi kumpulan data.",
+      "stimulus_id": null,
+      "question": "Perhatikan tabel distribusi data jumlah pengunjung perpustakaan Desa Sukamaju pada minggu ke-1 bulan Januari!\n\n[tabel]\n\nPada minggu ke-1 bulan Januari tersebut, diketahui informasi sebagai berikut:\n1) rata-rata pengunjung perpustakaan setiap hari adalah 6 orang,\n2) selalu ada minimal dua pengunjung perpustakaan namun tidak pernah melebihi 10 pengunjung pada setiap hari buka (Senin-Jumat), dan\n3) median dari data pada tabel adalah 6.\n\nTentukan Benar atau Salah pada setiap pernyataan berikut terkait jumlah pengunjung perpustakaan pada minggu ke-1 bulan Januari tersebut!",
+      "table": {
+        "columns": [
+          "Minggu ke-1",
+          "Senin",
+          "Selasa",
+          "Rabu",
+          "Kamis",
+          "Jumat"
+        ],
+        "rows": [
+          [
+            "Jumlah Pengunjung",
+            "4",
+            "p",
+            "5",
+            "r",
+            "6"
+          ]
+        ]
+      },
+      "columns": [
+        "Benar",
+        "Salah"
+      ],
+      "statements": [
+        {
+          "key": "1",
+          "text": "Banyak pengunjung pada hari Selasa pasti selalu lebih banyak dibandingkan hari lain."
+        },
+        {
+          "key": "2",
+          "text": "Banyak pengunjung pada hari Kamis pasti lebih dari 5 orang."
+        },
+        {
+          "key": "3",
+          "text": "Banyak pengunjung pada hari Jumat dan Kamis mungkin saja sama."
+        }
+      ],
+      "answer": {
+        "1": "Salah",
+        "2": "Benar",
+        "3": "Benar"
+      },
+      "pembahasan": "Jumlah = 5 × 6 = 30 → 4 + p + 5 + r + 6 = 30 → p + r = 15, dengan 2 ≤ p, r ≤ 10.\nKemungkinan (p, r): (5,10), (6,9), (7,8), (8,7), (9,6), (10,5).\n(5,10) dan (10,5) memberi median 5 ✗. Sisanya median 6 ✓ → p ∈ {6,7,8,9}, r ∈ {9,8,7,6}.\n1. (p, r) = (6, 9): Selasa lebih sedikit dari Kamis → Salah.\n2. r paling kecil 6 → Kamis pasti lebih dari 5 → Benar.\n3. (p, r) = (9, 6): Kamis = Jumat = 6 → Benar."
+    },
+    {
+      "no": 23,
+      "no_sumber": 24,
+      "type": "single",
+      "indikator": "Menggunakan berbagai informasi untuk menentukan peluang kejadian dalam permasalahan kontekstual.",
+      "stimulus_id": null,
+      "question": "Dalam rangka memperingati Tahun Baru Imlek, sebuah supermarket membuat kotak undian yang berisi hadiah untuk para pelanggannya. Terdapat 60 angpao yang dimasukkan ke dalam kotak tersebut. Hadiahnya terbagi dalam dua kategori, yaitu kupon belanja dan peralatan rumah tangga. Untuk hadiah kupon belanja, terdapat 15 angpao berisi kupon senilai Rp25.000,00 dan 12 angpao berisi kupon senilai Rp50.000,00. Untuk hadiah peralatan rumah tangga, terdapat 10 angpao berisi set sendok-garpu, 8 angpao berisi pemanas air, dan sisanya angpao kosong.\nRini menjadi orang pertama yang berkesempatan mengambil satu angpao secara acak dari kotak tersebut.\n\nBerapakah peluang Rini mengambil angpao yang kosong?",
+      "options": [
+        {
+          "key": "A",
+          "text": "1/15"
+        },
+        {
+          "key": "B",
+          "text": "1/5"
+        },
+        {
+          "key": "C",
+          "text": "1/4"
+        },
+        {
+          "key": "D",
+          "text": "1/3"
+        },
+        {
+          "key": "E",
+          "text": "5/11"
+        }
+      ],
+      "answer": "C",
+      "pembahasan": "Angpao berhadiah = 15 + 12 + 10 + 8 = 45, angpao kosong = 60 − 45 = 15.\nP(kosong) = 15/60 = 1/4."
+    },
+    {
+      "no": 24,
+      "no_sumber": 25,
+      "type": "single",
+      "indikator": "Menerapkan konsep peluang kejadian majemuk dalam permasalahan kontekstual sehari-hari.",
+      "stimulus_id": null,
+      "question": "Sebuah kantin sekolah mengadakan undian berhadiah.\n\n[gambar]\n\nHanya kertas yang kosong yang akan selalu dikembalikan lagi ke dalam kotak meskipun terambil berkali-kali. Ani akan mengambil satu buah kertas dari kotak undian. Ani adalah orang kelima yang mengambil kertas undian.\n\nKertas apa sajakah yang mungkin sudah terambil oleh orang-orang sebelumnya sehingga peluang Ani memperoleh minuman atau makanan adalah 2/3?",
+      "image": "assets/soal/matematika-gladi/soal-24.jpg",
+      "image_alt": "Kotak undian: 6 kertas Minuman Gratis, 4 kertas Makanan Gratis, 5 kertas kosong.",
+      "options": [
+        {
+          "key": "A",
+          "text": "1 minuman gratis, 1 makanan gratis, dan 2 kertas kosong."
+        },
+        {
+          "key": "B",
+          "text": "2 makanan gratis dan 2 minuman gratis."
+        },
+        {
+          "key": "C",
+          "text": "2 minuman gratis dan 2 kertas kosong."
+        },
+        {
+          "key": "D",
+          "text": "4 kertas kosong."
+        },
+        {
+          "key": "E",
+          "text": "4 minuman gratis."
+        }
+      ],
+      "answer": "D",
+      "pembahasan": "Awalnya 15 kertas, 10 berhadiah. Kertas kosong yang terambil dikembalikan.\nMisal h = kertas berhadiah yang sudah terambil: (10 − h) / (15 − h) = 2/3 → 30 − 3h = 30 − 2h → h = 0.\nJadi keempat orang sebelumnya mengambil kertas kosong: 4 kertas kosong."
+    }
+  ]
+}
