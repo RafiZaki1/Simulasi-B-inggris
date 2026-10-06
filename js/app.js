@@ -172,11 +172,16 @@
       + `<tbody>${t.rows.map((r) => `<tr>${r.map((c) => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
   }
 
-  /** Teks soal: paragraf dipisah baris kosong; paragraf "[gambar]" / "[tabel]" diganti gambar / tabel soal. */
+  /**
+   * Teks soal: paragraf dipisah baris kosong; paragraf "[gambar]" diganti gambar soal dan "[tabel]"
+   * diganti tabel soal (field table boleh berupa daftar; tiap "[tabel]" memakai tabel berikutnya).
+   */
   function questionHTML(q) {
+    const tables = [].concat(q.table || []);
+    let nextTable = 0;
     return String(q.question || '').split(/\n\s*\n/).map((par) => par.trim()).filter(Boolean).map((par) => {
       if (par === '[gambar]' && q.image) return `<img class="q-img" src="${esc(q.image)}" alt="${esc(q.image_alt || '')}">`;
-      if (par === '[tabel]' && q.table) return tableHTML(q.table);
+      if (par === '[tabel]' && tables[nextTable]) return tableHTML(tables[nextTable++]);
       return `<p>${esc(par).replace(/\n/g, '<br>')}</p>`;
     }).join('');
   }

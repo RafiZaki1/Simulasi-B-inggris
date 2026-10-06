@@ -22,6 +22,7 @@ css/style.css         tampilan
 js/app.js             logika: render soal, latihan, nilai, slide, ekspor PNG
 data/paket-2.json     data soal Bahasa Inggris (sumber utama)
 data/matematika-gladi.json  data soal Matematika (gladi Oktober, 24 soal)
+data/ekonomi-1.json   data soal Ekonomi Paket 1 (20 soal)
 data/paket-2.js       salinan otomatis dari JSON, dipakai saat dibuka via file://
 tools/build_data.py   membuat data/*.js dari data/*.json
 assets/icon.svg       logo
@@ -54,6 +55,13 @@ karena tidak ada di tangkapan layar. Soal No. 18 tidak ada di sumber, jadi nomor
 
 Soal tanpa teks bacaan tampil satu kolom. Di field `question`, paragraf `[gambar]` dan `[tabel]`
 diganti isi field `image` dan `table`.
+
+## Paket Ekonomi
+
+Pilih tab **Ekonomi** (atau `index.html?paket=ekonomi-1`). Berisi 20 soal simulasi TKA Ekonomi Paket 1
+yang ditranskripsi dari tangkapan layar TikTok @bnb_994. Jawaban yang tercentang di tangkapan layar
+sudah diperiksa ulang dan cocok semua. Field `table` boleh berisi beberapa tabel, dan setiap `[tabel]`
+memakai tabel berikutnya.
 
 ## Deploy
 
